@@ -54,7 +54,7 @@ To use Ray's actor model:
             return self.n
 
     counters = [Counter.remote() for i in range(4)]
-    [c.increment.remote() for c in counters]
+    [c.inc.remote() for c in counters]
     futures = [c.read.remote() for c in counters]
     print(ray.get(futures))
 
